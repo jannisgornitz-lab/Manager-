@@ -1,0 +1,48 @@
+MANAGER-KARRIERE ALS APP (Web-App / PWA)
+=========================================
+
+Inhalt dieses Ordners
+  index.html               das Spiel
+  manifest.webmanifest     App-Name, Symbole, Vollbild
+  sw.js                    Offline-Dienst (speichert das Spiel auf dem Handy)
+  icon-*.png               App-Symbole
+
+WICHTIG: Der Ordner muss auf einer Internetadresse (https) liegen. Direkt als Datei
+auf dem Handy öffnen funktioniert für die Installation NICHT.
+
+
+WEG A: Netlify Drop (am einfachsten, kein Konto nötig für den Test)
+  1. Diese ZIP-Datei auf dem Computer entpacken.
+  2. Im Browser app.netlify.com/drop öffnen.
+  3. Den entpackten ORDNER (nicht die ZIP-Datei) in das Feld ziehen.
+  4. Netlify zeigt eine Adresse wie https://irgendwas.netlify.app an.
+  5. Für eine dauerhafte Adresse ein kostenloses Konto anlegen und die Seite "claimen".
+
+
+WEG B: GitHub Pages (kostenlos, dauerhaft)
+  1. Auf github.com ein kostenloses Konto anlegen und oben rechts "New repository" wählen.
+  2. Name z.B. "manager", Sichtbarkeit "Public", "Create repository".
+  3. "uploading an existing file" anklicken und ALLE Dateien aus dem Ordner hochladen
+     (index.html, manifest.webmanifest, sw.js und alle icon-Dateien), dann "Commit changes".
+  4. Settings > Pages > "Deploy from a branch" > Branch "main" und Ordner "/ (root)" > Save.
+  5. Nach 1 bis 2 Minuten ist das Spiel unter https://DEINNAME.github.io/manager/ erreichbar.
+
+
+AUF DEM PIXEL INSTALLIEREN
+  1. Die Adresse in Chrome öffnen (nicht in der Claude-App).
+  2. Oben rechts auf die drei Punkte tippen.
+  3. "App installieren" (oder "Zum Startbildschirm hinzufügen") wählen und bestätigen.
+  4. Das Symbol "MGR" liegt jetzt auf dem Startbildschirm. Es startet ohne Browserleiste.
+
+OFFLINE
+  Beim ersten Öffnen mit Internet lädt sich das Spiel auf das Handy. Danach läuft es
+  auch im Flugmodus. Der Spielstand liegt im Browserspeicher der App auf diesem Handy.
+  Unten auf der Startseite kannst du ihn exportieren und importieren.
+
+AKTUALISIEREN
+  Wenn du neue Dateien hochlädst, in sw.js die Zeile  var VERSION="manager-v1";
+  auf "manager-v2" (und so weiter) ändern. Dann holt sich die App die neue Version.
+
+HINWEIS ZUM SPIELSTAND
+  Der Spielstand der Web-App ist getrennt von dem der Claude-Seite. Zum Mitnehmen:
+  in der alten Version "Exportieren", in der Web-App "Importieren".
